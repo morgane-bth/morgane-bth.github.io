@@ -1,0 +1,113 @@
+/******* INFORMATIONS GENERALES *******/
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF9F2;
+    color: #381B00;
+}
+
+p {
+    font-family: "Thasadith", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.875rem;
+}
+
+#container-central {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1350px;
+    /*1350 px a la base*/
+    /* border: 2px solid red; */
+}
+
+/******* PAGE D'ACCUEIL *******/
+
+/*** NAV BAR ***/
+#nav-bar-volants {
+    background-image: url("/assets/img/nav-bar-volants.png");
+    height: 200px;
+    /* j'ai defini la taille de 200px = 12.5rem*/
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+h1 {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3.125rem;
+    margin: 12.5px 0px 0px 100px;
+}
+
+h2 {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.875rem;
+}
+
+#right-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+/*** MAIN ***/
+#presentation-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /* border: 1px solid pink; */
+    width: auto;
+    height: auto;
+}
+
+#photo-de-profil {
+    height: 350px;
+    border-radius: 175px;
+    margin-top: 70px;
+}
+
+#bulle-de-presentation {
+    height: fit-content;
+    width: fit-content;
+    background-color: #E9E5DB;
+    padding: 60px;
+    border-radius: 130px 130px 130px 0;
+    position: relative;
+}
+
+#bulle-prenom {
+    background-color: #C2E5FF;
+    height: fit-content;
+    padding: 10px 30px;
+    border-radius: 100px;
+    position: absolute;
+    top: -20px;
+    right: 84px;
+    z-index: 1;
+    /* transform: rotate(3deg); */
+}
+
+#bulle-prenom>p {
+    font-weight: 700;
+}
+
+/******* PAGES SECONDAIRES *******/
+/*** COMPÉTENCES ***/
+/*** PROJETS ***/
+/*** CONTACT ***/
+/*** FOOTER ***/
