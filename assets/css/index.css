@@ -1,5 +1,13 @@
 /******* INFORMATIONS GENERALES *******/
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+:root {
+    --bg-beige: #FFF9F2;
+    --clr-text: #381B00;
+    --soft-grey: #E9E5DB;
+    --soft-blue: #C2E5FF;
+    --darker-blue: #759DD2;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&display=swap');
 
 * {
     margin: 0;
@@ -8,15 +16,16 @@
 }
 
 body {
-    background-color: #FFF9F2;
-    color: #381B00;
+    background-color: var(--bg-beige);
+    color: var(--clr-text);
 }
 
 p {
-    font-family: "Thasadith", sans-serif;
-    font-weight: 400;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
     font-style: normal;
-    font-size: 1.875rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 #container-central {
@@ -24,19 +33,24 @@ p {
     margin-right: auto;
     max-width: 1350px;
     /*1350 px a la base*/
-    /* border: 2px solid red; */
+    /* border: 1px solid red; */
+    position: relative;
 }
 
 /******* PAGE D'ACCUEIL *******/
 
 /*** NAV BAR ***/
 #nav-bar-volants {
-    background-image: url("/assets/img/nav-bar-volants.png");
-    height: 200px;
+    background-image: url("/assets/img/nav-bar-volant-hauteur-125.5.png");
+    height: 150px;
+    width: 100%;
     /* j'ai defini la taille de 200px = 12.5rem*/
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
-nav {
+nav #container-central {
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -46,18 +60,29 @@ h1 {
     font-family: "Crimson Text", serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 3.125rem;
-    margin: 12.5px 0px 0px 100px;
+    font-size: 3rem;
+    margin: 25px;
 }
 
 h2 {
     font-family: "Crimson Text", serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 1.875rem;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
-#right-container {
+h1 a:visited,
+h2 a:visited {
+    color: var(--clr-text);
+}
+
+h1 a,
+h2 a {
+    text-decoration: none;
+}
+
+#right-container-header-nav-bar {
     display: flex;
     flex: 1;
     justify-content: space-evenly;
@@ -68,7 +93,7 @@ h2 {
 #presentation-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 100px;
+    margin-top: 300px;
     margin-bottom: 100px;
     /* border: 1px solid pink; */
     width: auto;
@@ -76,22 +101,23 @@ h2 {
 }
 
 #photo-de-profil {
-    height: 350px;
-    border-radius: 175px;
+    height: 400px;
+    width: 400px;
+    border-radius: 200px;
     margin-top: 70px;
 }
 
 #bulle-de-presentation {
-    height: fit-content;
-    width: fit-content;
-    background-color: #E9E5DB;
-    padding: 60px;
+    height: 300px;
+    width: 700px;
+    background-color: var(--soft-grey);
+    padding: 70px 30px 70px 70px;
     border-radius: 130px 130px 130px 0;
     position: relative;
 }
 
 #bulle-prenom {
-    background-color: #C2E5FF;
+    background-color: var(--soft-blue);
     height: fit-content;
     padding: 10px 30px;
     border-radius: 100px;
@@ -102,12 +128,110 @@ h2 {
     /* transform: rotate(3deg); */
 }
 
-#bulle-prenom>p {
+#bulle-prenom p {
     font-weight: 700;
 }
 
 /******* PAGES SECONDAIRES *******/
+h3 {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+}
+
 /*** COMPÉTENCES ***/
+#mes-competences {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+#mes-competences+#container-central {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
 /*** PROJETS ***/
+h4 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.25rem;
+}
+
+#mes-projets {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.projets-container div img {
+    height: 300px;
+    width: 500px;
+    margin: 0px auto;
+    transition: transform 2s ease;
+}
+
+.projets-container div img:hover {
+    transform: scale(1.1);
+}
+
+.projets-container>div {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#col {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
+    border: 1px solid var(--soft-grey);
+    background-color: var(--soft-grey);
+    width: 650px;
+    gap: 20px;
+    text-align: justify;
+    padding: 30px;
+    border-radius: 20px;
+}
+
 /*** CONTACT ***/
+#contact-volant {
+    background-image: url("/assets/img/contact-volant-v2.png");
+    height: 370px;
+    width: 100%;
+    display: flex;
+    margin-top: 150px;
+}
+
+
+#contact {
+    margin: 100px 0px 50px 20px;
+}
+
+#info-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--soft-grey);
+    padding: 25px;
+    border-radius: 100px;
+    height: 80px;
+}
+
+
 /*** FOOTER ***/
+footer p {
+    font-family: "Zain", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    padding: 10px;
+}
+
+#coeur-bleu {
+    height: 15px;
+    width: 15px;
+}
