@@ -80,6 +80,7 @@ h2 a:visited {
 h1 a,
 h2 a {
     text-decoration: none;
+    color: var(--clr-text);
 }
 
 #right-container-header-nav-bar {
