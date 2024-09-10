@@ -194,7 +194,7 @@ h4 {
     gap: 20px;
     text-align: justify;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 /*** CONTACT ***/
@@ -235,4 +235,66 @@ footer p {
 #coeur-bleu {
     height: 15px;
     width: 15px;
+}
+
+/***** RESPONSIVE *****/
+
+/* image volanté de mon contact disparait */
+@media screen and (max-width: 1172px) {
+    #contact-volant {
+        background-size: auto;
+        background-repeat: repeat-x;
+    }
+}
+
+/* texte dans la bulle de discussion sort de la bulle */
+@media screen and (max-width: 1091px) {}
+
+/* largeur d'un iphone 14 pro max */
+@media screen and (max-width: 430px) {
+    #container-central {
+        border: 2px solid red;
+        max-width: 429px;
+    }
+
+    /* PRESENTATION */
+    #photo-de-profil {
+        height: 300px;
+        width: 300px;
+        border-radius: 200px;
+        margin-top: -120px;
+
+    }
+
+    #presentation-container {
+        flex-direction: column;
+    }
+
+    #bulle-de-presentation {
+        height: 100px;
+        width: 400px;
+        border-radius: 50px;
+    }
+
+    #bulle-prenom {
+        top: -20px;
+        right: 133px;
+    }
+
+
+    /* MES PROJETS */
+    .projets-container>div,
+    #mes-competences+#container-central {
+        flex-wrap: wrap;
+    }
+
+    #col {
+        width: 400px;
+    }
+
+    .projets-container div img {
+        height: 150px;
+        width: 250px;
+        transition: none;
+    }
 }
